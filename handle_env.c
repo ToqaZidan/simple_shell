@@ -56,7 +56,7 @@ int env_set_key(char *key, char *value, data_of_program *data)
 		{
 			data->env[i + 1] = NULL;
 		}
-		return (0);	
+		return (0);
 }
 /**
   * env_remove_key - remove a key from the environment

@@ -36,8 +36,8 @@ int find_program(data_of_program *data)
 			errno = 0;
 			free(data->tokens[0]);
 			data->tokens[0] = str_duplicate(directories[i]);
-			free_array_of_pointers(directories);		
-			return (ret_code;)
+			free_array_of_pointers(directories);
+			return (ret_code);
 		}
 	}
 	free(data->tokens[0]);
@@ -89,6 +89,7 @@ char **tokenize_path(data_of_program *data)
 int check_file(char *full_path)
 {
 	struct stat sb;
+
 	if (stat(full_path, &sb) != -1)
 	{
 		if (S_ISDIR(sb.st_mode) ||  access(full_path, X_OK))
