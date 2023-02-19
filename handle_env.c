@@ -107,31 +107,4 @@ void print_environ(data_of_program *data)
 		_print("\n");
 	}
 }
-int str_compare(char *string1, char *string2, int number)
-{
-	int iterator;
-	if (string1 == NULL && string2 == NULL)
-		return (1);
-	if (string1 == NULL || string2 == NULL)
-		return (0);
-	if (number == 0) /* infinite longitud */
-	{
-		if (_strlen(string1) != _strlen(string2))
-			return (0);
-		for (iterator = 0; string1[iterator]; iterator++)
-		{
-			if (string1[iterator] != string2[iterator])
-				return (0);
-		}
-		return (1);
-	}
-	else
-	{
-		for (iterator = 0; iterator < number ; iterator++)
-		{
-			if (string1[iterator] != string2[iterator])
-			return (0);
-		}
-		return (1);
-	}
-}
+
