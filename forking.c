@@ -8,6 +8,7 @@
  * @cycles: Number of cycles executed.
  * Return: Nothing.
  */
+/**
 void makchild(char **cmd, char *name, char **env, int cycles)
 {
 	int pid = 0;
@@ -24,7 +25,7 @@ void makchild(char **cmd, char *name, char **env, int cycles)
 	{
 		execute(data_of_program *data);
 		execute(cmd, name, env, cycles);
-	/* you should use this in your function declaration */
+	 you should use this in your function declaration 
 
 		free(cmd);
 	}
@@ -38,3 +39,4 @@ void makchild(char **cmd, char *name, char **env, int cycles)
 		free(cmd);
 	}
 }
+*/

@@ -9,7 +9,7 @@
  * Return: Always 0.
  */
 
-int main(int ac, char **av, char **env)
+int main(int ac, __attribute__ ((unused)) char **av,__attribute__ ((unused)) char **env)
 {
 	char *buffer = NULL, **cmd = NULL;
 	size_t buf_size = 0;
