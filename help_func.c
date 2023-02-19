@@ -69,6 +69,7 @@ int _strcmp(char *str1, char *str2)
  * @src: The pointer to string to copy for
  * Return: A pointer to copied string
  */
+/**
 char *_strcpy(char *dest, char *src)
 {
 	char *n = dest;
@@ -78,6 +79,7 @@ char *_strcpy(char *dest, char *src)
 	*dest = '\0';
 	return (n);
 }
+*/
 
 
 /**
