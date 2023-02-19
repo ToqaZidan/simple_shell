@@ -12,7 +12,7 @@ char *str_duplicate(char *string)
 
 	if (string == NULL)
 		return (NULL);
-	length = str_length(string) + 1;
+	length = _strlen(string) + 1;
 	result = malloc(sizeof(char) * length);
 	if (result == NULL)
 	{

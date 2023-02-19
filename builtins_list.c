@@ -1,5 +1,7 @@
 #include "shell.h"
 
+ int str_compare(char *string1, char *string2, int number);
+
 /**
   * builtins_list - search for match and execute the associate builtin
   * @data: struct for the program's data
@@ -11,10 +13,6 @@ int builtins_list(data_of_program *data)
 	int iterator;
 
 	builtins options[] = {
-		{"exit", builtin_exit},
-		{"help", builtin_help},
-		{"cd", builtin_cd},
-		{"alias", builtin_alias},
 		{"env", builtin_env},
 		{"setenv", builtin_set_env},
 		{"unsetenv", builtin_unset_env},
@@ -29,4 +27,33 @@ int builtins_list(data_of_program *data)
 		}
 	}
 	return (-1);
+}
+int str_compare(char *string1, char *string2, int number)
+{
+	int iterator;
+
+	if (string1 == NULL && string2 == NULL)
+		return (1);
+	if (string1 == NULL || string2 == NULL)
+		return (0);
+	if (number == 0) /* infinite longitud */
+	{
+		if (_strlen(string1) != _strlen(string2))
+			return (0);
+		for (iterator = 0; string1[iterator]; iterator++)
+		{
+			if (string1[iterator] != string2[iterator])
+				return (0);
+		}
+		return (1);
+	}
+	else /* if there is a number of chars to be compared */
+	{
+		for (iterator = 0; iterator < number ; iterator++)
+		{
+			if (string1[iterator] != string2[iterator])
+				return (0);
+		}
+		return (1);
+	}
 }

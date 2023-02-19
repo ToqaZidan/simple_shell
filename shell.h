@@ -110,6 +110,7 @@ unsigned int _strlen(char *str);
 char *_strcpy(char *dest, char *src);
 int _atoi(char *str);
 char *_strcat(char *dest, char *src);
+char *str_duplicate(char *string);
 
 /* EXECUTION AN HANDLING PATH */
 int parse_command(char *);
