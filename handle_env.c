@@ -14,10 +14,10 @@ char *env_get_key(char *key, data_of_program *data)
 	/* validate the arguments */
 	if (key == NULL || data->env == NULL)
 		return (NULL);
-	key_length = str_length(key);
+	key_length = _strlen(key);
 	for (i = 0; data->env[i]; i++)
 	{
-		if (_strcmp(key, data->env[i], key_length) &&
+		if (str_compare(key, data->env[i], key_length) &&
 		data->env[i][key_length] == '=')
 		{
 			return (data->env[i] + key_length + 1);
@@ -40,10 +40,10 @@ int env_set_key(char *key, char *value, data_of_program *data)
 	/* validate the arguments */
 	if (key == NULL || value == NULL || data->env == NULL)
 		return (1);
-	key_length = str_length(key);
+	key_length = _strlen(key);
 	for (i = 0; data->env[i]; i++)
 	{
-		if (_strcmp(key, data->env[i], key_length) &&
+		if (str_compare(key, data->env[i], key_length) &&
 		data->env[i][key_length] == '=')
 		{
 			is_new_key = 0;
@@ -74,7 +74,7 @@ int env_remove_key(char *key, data_of_program *data)
 		return (0);
 
 	/* obtains the leng of the variable requested */
-	key_length = str_length(key);
+	key_length = _strlen(key);
 	for (i = 0; data->env[i]; i++)
 	{
 		if (str_compare(key, data->env[i], key_length) &&
@@ -116,7 +116,7 @@ int str_compare(char *string1, char *string2, int number)
 		return (0);
 	if (number == 0) /* infinite longitud */
 	{
-		if (_strlen(string1) != str_length(string2))
+		if (_strlen(string1) != _strlen(string2))
 			return (0);
 		for (iterator = 0; string1[iterator]; iterator++)
 		{

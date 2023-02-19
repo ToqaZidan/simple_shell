@@ -90,6 +90,8 @@ int _printe(char *string);
 /* Prints a string in the standar error */
 int _print_error(int errorcode, data_of_program *data);
 
+char *str_duplicate(char *string);
+
 /* SHELL INTIALIZATION FUNCTION PROTOTYPES */
 int main(int ac, char **av, char **env);
 void prompt(void);
@@ -102,7 +104,8 @@ void makchild(char **cmd, char *name, char **env, int cycles);
 
 
 /* COMMAND TOKENAZIATION FUNCTION PROTOTYPES */
-char **_strtok(char *buffer, const char *s);
+char **_strrtok(char *buffer, const char *s);
+char *_strtok(char *line, char *delim);
 
 /* HELPER FUNCTION PROTOTYPES */
 int _strcmp(char *str1, char *str2);

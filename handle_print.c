@@ -1,5 +1,8 @@
 #include "shell.h"
 
+void str_reverse(char *string);
+void long_to_string(long number, char *string, int base);
+
 /**
   * _print - writes a array of chars in the standar output
   * @string: pointer to the array of chars
@@ -8,7 +11,7 @@
   */
 int _print(char *string)
 {
-	return (write(STDOUT_FILENO, string, str_length(string)));
+	return (write(STDOUT_FILENO, string, _strlen(string)));
 }
 /**
   * _printe - writes a array of chars in the standar error
@@ -18,7 +21,7 @@ int _print(char *string)
   */
 int _printe(char *string)
 {
-	return (write(STDERR_FILENO, string, str_length(string)));
+	return (write(STDERR_FILENO, string, _strlen(string)));
 }
 /**
   * _print_error - writes a array of chars in the standart error
@@ -66,4 +69,66 @@ int _print_error(int errorcode, data_of_program *data)
 		_printe(": Permission denied\n");
 	}
 	return (0);
+}
+void long_to_string(long number, char *string, int base)
+{
+	int index = 0, inNegative = 0;
+	long cociente = number;
+	char letters[] = {"0123456789abcdef"};
+
+	if (cociente == 0)
+		string[index++] = '0';
+	if (string[0] == '-')
+		inNegative = 1;
+	while (cociente)
+	{
+		if (cociente < 0)
+			string[index++] = letters[-(cociente % base)];
+		else
+			string[index++] = letters[cociente % base];
+		cociente /= base;
+	}
+	if (inNegative)
+		string[index++] = '-';
+	string[index] = '\0';
+	str_reverse(string);
+}
+void str_reverse(char *string)
+{
+
+	int i = 0, length = _strlen(string) - 1;
+	char hold;
+
+	while (i < length)
+	{
+		hold = string[i];
+		string[i++] = string[length];
+		string[length--] = hold;
+	}
+}
+/**
+  * str_duplicate - duplicates an string
+  * @string: String to be copied
+  * Return: pointer to the array
+  */
+char *str_duplicate(char *string)
+{
+	char *result;
+	int length, i;
+
+	if (string == NULL)
+		return (NULL);
+	length = _strlen(string) + 1;
+	result = malloc(sizeof(char) * length);
+	if (result == NULL)
+	{
+		errno = ENOMEM;
+		perror("Error");
+		return (NULL);	
+	}
+	for (i = 0; i < length ; i++)
+	{
+		result[i] = string[i];
+	}
+	return (result);
 }

@@ -4,7 +4,7 @@
   * str_duplicate - duplicates an string
   * @string: String to be copied
   * Return: pointer to the array
-  */
+  
 char *str_duplicate(char *string)
 {
 	char *result;
@@ -26,6 +26,7 @@ char *str_duplicate(char *string)
 	}
 	return (result);
 }
+*/
 /**
  * _strlen - A function finds the length of the string
  * @str: The input string
@@ -69,7 +70,7 @@ int _strcmp(char *str1, char *str2)
  * @src: The pointer to string to copy for
  * Return: A pointer to copied string
  */
-/**
+
 char *_strcpy(char *dest, char *src)
 {
 	char *n = dest;
@@ -79,7 +80,7 @@ char *_strcpy(char *dest, char *src)
 	*dest = '\0';
 	return (n);
 }
-*/
+
 
 
 /**

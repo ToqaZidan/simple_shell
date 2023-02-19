@@ -29,7 +29,7 @@ int main(int ac, char **av, char **env)
 		else
 		{
 			buffer[_strlen(buffer) - 1] = '\0';
-			cmd = _strtok(buffer, " \0");
+			cmd = _strrtok(buffer, " \0");
 			free(buffer);
 			if (_strcmp(cmd[0], "exit") != 0)
 				exfree(cmd);
