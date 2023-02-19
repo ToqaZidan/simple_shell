@@ -15,6 +15,7 @@ int main(int ac, char **av, char **env)
 	size_t buf_size = 0;
 	ssize_t nchar_readed = 0;
 	int cycles = 0;
+	data_of_program *data = NULL;
 	(void)ac;
 
 	while (1)
@@ -35,7 +36,8 @@ int main(int ac, char **av, char **env)
 				exfree(cmd);
 
 			else
-				makchild(cmd, av[0], env, cycles);
+				/*makchild(cmd, av[0], env, cycles);*/
+				execute(data);
 		}
 		fflush(stdin);
 		buffer = NULL, buf_size = 0;
