@@ -1,8 +1,4 @@
-
-# Simple Shell 
-
-
-
+# Simple Shell
 
 
 
@@ -19,7 +15,7 @@
 
 ##### This repository contains the files to implement a basic Unix Shell with its respective commands. It is made to carry out the 0x16. C - Simple Shell project in SE programe at [ALX AFRICA](https://www.alxafrica.com/)
 
-This simple shell is a Shell interface written in C programming language that gives to the user a prompt *Shell$ *, after it accepts, it executes a user inputted command in a separate process called child process. 
+This simple shell is a Shell interface written in C programming language that gives to the user a prompt *Shell$ *, after it accepts, it executes a user inputted command in a separate process called child process.
 
 ## What this Shell do?
 
@@ -28,9 +24,11 @@ This simple shell is a Shell interface written in C programming language that gi
 * When the user enters exit, Shell$ will end and return the status 0.
 * When the user enters exit,Shell$ will end and return the input status.
 * The user could stop the program using Ctrl+D (end of file “EOF”).
+* This shell handle CTRL+C signal.
+* This shell change directory.
 * The shell handles the command lines with arguments and pathways.
 * The program prints the current environment when the user types env.
-* This program executes common shell commands as ls, pwd, exit, env.
+* This program executes common shell commands as ls, pwd, exit, env, cd, ..etc
 
 ## What this Shell do not do?
 

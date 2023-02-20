@@ -9,6 +9,7 @@
 #include <sys/stat.h>
 #include <sys/wait.h>
 
+<<<<<<< HEAD
 typedef struct info
 {
 	char *program_name;
@@ -91,12 +92,15 @@ int _printe(char *string);
 int _print_error(int errorcode, data_of_program *data);
 
 char *str_duplicate(char *string);
+=======
+>>>>>>> c9a24a604322195b2987a1894994fdc8bf113101
 
 /* SHELL INTIALIZATION FUNCTION PROTOTYPES */
 int main(int ac, char **av, char **env);
 void prompt(void);
 void EOFF(char *buffer);
 void quitsh(char **cmd);
+void handle(int sigint);
 
 
 /* MAKE NEW CHILD PROCESS FUNCTION PROTOTYPES */
@@ -104,8 +108,7 @@ void makchild(char **cmd, char *name, char **env, int cycles);
 
 
 /* COMMAND TOKENAZIATION FUNCTION PROTOTYPES */
-char **_strrtok(char *buffer, const char *s);
-char *_strtok(char *line, char *delim);
+char **_strtok(char *buffer, const char *s);
 
 /* HELPER FUNCTION PROTOTYPES */
 int _strcmp(char *str1, char *str2);
@@ -113,15 +116,16 @@ unsigned int _strlen(char *str);
 char *_strcpy(char *dest, char *src);
 int _atoi(char *str);
 char *_strcat(char *dest, char *src);
-char *str_duplicate(char *string);
+
 
 /* EXECUTION AN HANDLING PATH */
-int parse_command(char *);
-void execute_command(char **, int);
-char *check_path(char *);
-void (*get_func(char *))(char **);
-char *_getenv(char *);
+void execute(char **command, char *name, char **env, int cicles);
+void print_env(char **env);
+char **_getPATH(char **env);
+void msgerror(char *name, int cicles, char **command);
 
+/* CHANGE DIRECTORY */
+int change_dir(const char *path);
 
 /* FREE MEMORY FUNCTION PROTOTYPES*/
 void free_memo(char **cmd);
