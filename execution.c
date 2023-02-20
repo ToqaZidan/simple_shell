@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #include "shell.h"
 
 /**
@@ -110,6 +109,3 @@ void msgerror(char *name, int cycles, char **cmd)
 	write(STDOUT_FILENO, cmd[0], _strlen(cmd[0]));
 	write(STDOUT_FILENO, ": not found\n", 12);
 }
-
-=======
->>>>>>> c9a24a604322195b2987a1894994fdc8bf113101
