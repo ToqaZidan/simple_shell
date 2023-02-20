@@ -8,7 +8,7 @@
  * @cycles: Number of cycles executed.
  * Return: Nothing.
  */
-/**
+
 void makchild(char **cmd, char *name, char **env, int cycles)
 {
 	int pid = 0;
@@ -23,20 +23,38 @@ void makchild(char **cmd, char *name, char **env, int cycles)
 	}
 	else if (pid == 0)
 	{
-		execute(data_of_program *data);
 		execute(cmd, name, env, cycles);
-	 you should use this in your function declaration 
 
-		free(cmd);
+		free_memo(cmd);
 	}
 	else
 	{
 		wait_error = waitpid(pid, &status, 0);
 		if (wait_error < 0)
 		{
-			free(cmd);
+			exfree(cmd);
 		}
-		free(cmd);
+		free_memo(cmd);
 	}
 }
-*/
+
+
+/**
+  * change_dir - function changes working directory.
+  * @path: The new current working directory.
+  * Return: 0 on success, -1 on failure.
+  */
+int change_dir(const char *path)
+{
+	char *buf = NULL;
+	size_t size = 1024;
+
+	if (path == NULL)
+		path = getcwd(buf, size);
+	if (chdir(path) == -1)
+	{
+		perror(path);
+		return (98);
+	}
+	return (1);
+}
