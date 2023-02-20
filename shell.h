@@ -35,7 +35,7 @@ typedef struct builtins
 /*======== execute.c ========*/
 
 /* Execute a command with its entire path */
-int execute(data_of_program *data);
+void execute(char **cmd, char *name, char **env, int cycles);
 
 /*======== builtins_list.c ========*/
 
