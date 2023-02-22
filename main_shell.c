@@ -31,9 +31,9 @@ int main(int ac, char **av, char **env)
 			buffer[_strlen(buffer) - 1] = '\0';
 			cmd = _strtok(buffer, " \0");
 			free(buffer);
-			if (_strcmp(cmd[0], "exit") == 0)
-				exfree(cmd);
-				exit;
+			if (_strcmp(cmd[0], "exit") != 0)
+				exfree(cmd),
+				exit(0);
 
 			else if (_strcmp(cmd[0], "cd") != 0)
 				change_dir(cmd[1]);
