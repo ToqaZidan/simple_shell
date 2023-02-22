@@ -33,7 +33,7 @@ int main(int ac, char **av, char **env)
 			free(buffer);
 			if (_strcmp(cmd[0], "exit") != 0)
 				exfree(cmd);
-				quitsh;
+				
 			else if (_strcmp(cmd[0], "cd") != 0)
 				change_dir(cmd[1]);
 
